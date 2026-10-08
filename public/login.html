@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>登录 · CunDrop</title>
+<link rel="stylesheet" href="/css/style.css">
+</head>
+<body class="auth-body">
+<div class="blob blob-1"></div>
+<div class="blob blob-2"></div>
+<div class="auth-card">
+  <div class="logo"><span class="logo-mark">◈</span> CunDrop</div>
+  <p class="auth-sub">你的私人云盘 · Cloudflare R2 驱动</p>
+  <div id="errBox" class="alert error hidden"></div>
+  <form id="loginForm">
+    <input type="password" id="password" placeholder="输入访问密码" autofocus required>
+    <button type="submit" class="btn primary btn-block">进入</button>
+  </form>
+</div>
+<script>
+document.getElementById('loginForm').addEventListener('submit', async (e) => {
+  e.preventDefault();
+  const box = document.getElementById('errBox');
+  box.classList.add('hidden');
+  const r = await fetch('/api/login', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ password: document.getElementById('password').value }),
+  });
+  if (r.ok) {
+    location.href = '/';
+  } else {
+    const j = await r.json().catch(() => ({}));
+    box.textContent = j.error || '登录失败';
+    box.classList.remove('hidden');
+  }
+});
+</script>
+</body>
+</html>
