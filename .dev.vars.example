@@ -1,0 +1,9 @@
+# 本地开发用变量 (wrangler dev 会读取 .dev.vars)
+# 复制为 .dev.vars 后填入真实值, 不要提交到 Git
+ADMIN_PASSWORD = "请设置登录密码"
+SESSION_SECRET = "请设置随机字符串"
+CF_ACCOUNT_ID = "Cloudflare Account ID (R2 页面右侧)"
+D1_DATABASE_ID = "D1 数据库的 ID"
+D1_API_TOKEN = "有 D1 编辑权限的 API Token"
+R2_ACCESS_KEY_ID = "R2 API Token 的 Access Key ID"
+R2_SECRET_ACCESS_KEY = "R2 API Token 的 Secret Access Key"
