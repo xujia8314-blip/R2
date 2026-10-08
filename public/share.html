@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CunDrop 分享</title>
+<link rel="stylesheet" href="/css/style.css">
+</head>
+<body class="share-body">
+<div class="blob blob-1"></div>
+<div class="blob blob-2"></div>
+
+<!-- 密码解锁 -->
+<div id="pwdCard" class="share-card hidden">
+  <div class="logo"><span class="logo-mark">◈</span> CunDrop</div>
+  <p class="auth-sub">该分享设有访问密码</p>
+  <div id="pwdErr" class="alert error hidden"></div>
+  <form id="pwdForm">
+    <input type="password" id="pwdInput" placeholder="输入分享密码" autofocus required>
+    <button type="submit" class="btn primary btn-block">解锁</button>
+  </form>
+</div>
+
+<!-- 文件展示 -->
+<div id="fileCard" class="share-card wide hidden">
+  <div class="share-file-head">
+    <div id="fileIcon" class="file-icon"></div>
+    <div>
+      <div class="share-filename" id="fileName"></div>
+      <div class="share-meta" id="fileMeta"></div>
+    </div>
+  </div>
+  <div id="preview"></div>
+  <a class="btn primary btn-block" id="dlBtn" href="#">⬇ 下载文件</a>
+  <div class="logo small"><span class="logo-mark">◈</span> CunDrop</div>
+</div>
+
+<!-- 错误 -->
+<div id="errCard" class="share-card hidden">
+  <div class="share-err-code">404</div>
+  <p class="share-err-msg" id="errMsg">分享不存在或已过期</p>
+  <div class="logo small"><span class="logo-mark">◈</span> CunDrop</div>
+</div>
+
+<script src="/js/share.js"></script>
+</body>
+</html>
