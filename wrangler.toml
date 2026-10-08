@@ -1,0 +1,26 @@
+name = "cundrop"
+main = "src/worker.js"
+compatibility_date = "2026-10-01"
+
+# 静态前端: public/ 目录, Worker 优先处理所有请求 (用于登录鉴权拦截),
+# 再按需转发给静态资源
+# html_handling = "none": 禁止 /share.html → /share 这类跳转,
+# 否则分享页 URL 会变, 前端取不到 token
+[assets]
+directory = "./public"
+binding = "ASSETS"
+run_worker_first = true
+html_handling = "none"
+
+# R2 存储桶绑定 (文件本体)
+[[r2_buckets]]
+binding = "R2"
+bucket_name = "cundrop"
+
+# 注意: D1 不使用原生绑定, 改由 Worker 经 REST API 访问,
+# database_id 等凭证全部放在 Secrets 里, 这里不出现任何 ID
+
+[vars]
+# R2 存储桶名 (非敏感, 与上面 r2_buckets.bucket_name 保持一致)
+R2_BUCKET = "cundrop"
+# R2_ACCOUNT_ID 已移至 Secrets (不在公开仓库中暴露)
