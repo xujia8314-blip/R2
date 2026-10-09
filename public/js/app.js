@@ -134,6 +134,10 @@ function uploadOne(file) {
     loadFiles();
   })().catch((e) => {
     box.classList.add("error"); pct.textContent = "失败";
+    const x = document.createElement("button");
+    x.className = "up-x"; x.textContent = "✕"; x.title = "关闭";
+    x.onclick = () => box.remove();
+    box.querySelector(".up-top").appendChild(x);
     toast("上传失败：" + e.message);
   });
 }
