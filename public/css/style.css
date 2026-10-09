@@ -87,6 +87,9 @@ label { display: block; font-size: 13px; color: var(--muted); margin-top: 14px; 
 .share-audio { width: 100%; margin-bottom: 18px; }
 .share-err-code { font-size: 64px; font-weight: 800; text-align: center; background: var(--grad); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
 .share-err-msg { text-align: center; color: var(--muted); margin: 10px 0 6px; }
+.share-hint { margin-top: 16px; font-size: 12.5px; color: var(--muted); text-align: center; line-height: 1.7; }
+.seller-contact { margin-top: 14px; font-size: 13px; color: var(--muted); text-align: center; }
+.seller-contact b { color: var(--accent2); }
 
 /* 文件类型图标 */
 .file-icon {
