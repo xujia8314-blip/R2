@@ -1,6 +1,8 @@
 /* CunDrop 面板逻辑 (Cloudflare Workers 版) */
 const $ = (s) => document.querySelector(s);
 let FILES = [], SHARES = [];
+// 卖家微信号：新建分享时自动填入密码框；修改后记得同步 public/share.html 里的展示
+const SELLER_WECHAT = "dszl100";
 
 function toast(msg) {
   const t = $("#toast");
@@ -148,7 +150,7 @@ function openShare(id, name) {
   shareFileId = id;
   $("#shareFileName").textContent = name;
   $("#shareResult").classList.add("hidden");
-  $("#sharePwd").value = "";
+  $("#sharePwd").value = SELLER_WECHAT;
   $("#shareViews").value = "1";
   $("#shareModal").classList.remove("hidden");
 }
