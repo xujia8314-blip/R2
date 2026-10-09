@@ -181,6 +181,11 @@ main { flex: 1; padding: 28px 34px; max-width: 1080px; }
 .up-bar i { display: block; height: 100%; background: var(--grad); width: 0; transition: width .2s; border-radius: 4px; }
 .up-item.done .up-bar i { background: linear-gradient(135deg, #10b981, #22d3ee); }
 .up-item.error { border-color: rgba(248,113,113,.4); }
+.up-top .up-x {
+  background: none; border: none; color: var(--muted);
+  font-size: 16px; cursor: pointer; padding: 0 0 0 10px; line-height: 1;
+}
+.up-top .up-x:hover { color: #fca5a5; }
 
 .empty { text-align: center; color: var(--muted); padding: 60px 20px; font-size: 15px; }
 
